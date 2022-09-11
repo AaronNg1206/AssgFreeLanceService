@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "465448466948",
+    "project_id": "freelanceservice-48fbf",
+    "storage_bucket": "freelanceservice-48fbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465448466948:android:ef4cce3fdce35235b75351",
+        "android_client_info": {
+          "package_name": "com.nghycp.assgfreelanceservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465448466948-3e7g62i3toj06c3vkma1j9k79c656ne2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5dYqiFhpVW-pf9Tf3UXRAyS7mDWqwtEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465448466948-3e7g62i3toj06c3vkma1j9k79c656ne2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
