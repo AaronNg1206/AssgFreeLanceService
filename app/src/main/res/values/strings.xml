@@ -68,5 +68,7 @@
     <string name="johor">Johor</string>
     <string name="kedah">Kedah</string>
     <string name="terengganu">Terengganu</string>
+    <string name="action_logout">LogOut</string>
+    <string name="action_userprofile">User Profile</string>
 
 </resources>

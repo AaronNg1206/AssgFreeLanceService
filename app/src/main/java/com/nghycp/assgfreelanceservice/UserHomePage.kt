@@ -1,8 +1,13 @@
 package com.nghycp.assgfreelanceservice
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.nghycp.assgfreelanceservice.databinding.ActivityUserHomePageBinding
 
@@ -43,4 +48,11 @@ class UserHomePage : AppCompatActivity() {
             binding.textEmail.text = email
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
 }
