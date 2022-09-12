@@ -116,7 +116,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/image_edit"
         android:layout_width="288dp"
         android:layout_height="224dp"
         app:layout_constraintBottom_toBottomOf="parent"

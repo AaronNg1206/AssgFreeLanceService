@@ -75,5 +75,7 @@
     <string name="kedah">Kedah</string>
     <string name="terengganu">Terengganu</string>
     <string name="btn_back_user">back</string>
+    <string name="btn_edit_phone">Phone Number</string>
+    <string name="btn_edit_name">Name</string>
 
 </resources>
