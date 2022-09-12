@@ -3,6 +3,7 @@ package com.nghycp.assgfreelanceservice
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import com.nghycp.assgfreelanceservice.databinding.ActivityUserProfileBinding
 
 class UserProfileActivity : AppCompatActivity() {
@@ -13,9 +14,5 @@ class UserProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUserProfileBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_user_profile)
-
-        binding.btnBackHome.setOnClickListener {
-            startActivity(Intent(this, UserHomePage::class.java))
-        }
     }
 }

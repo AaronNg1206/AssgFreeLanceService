@@ -70,5 +70,7 @@
     <string name="terengganu">Terengganu</string>
     <string name="action_logout">LogOut</string>
     <string name="action_userprofile">User Profile</string>
+    <string name="dis_userp">User Profile</string>
+    <string name="edit_btn">Edit</string>
 
 </resources>
