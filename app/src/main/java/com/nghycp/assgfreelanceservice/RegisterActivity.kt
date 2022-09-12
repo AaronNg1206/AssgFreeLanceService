@@ -90,7 +90,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun updateUserInfo() {
         progressDialog.setMessage("Saving User Info...")
 
-        val timestamp = System.currentTimeMillis()
+//        val timestamp = System.currentTimeMillis()
 
         val uid = firebaseAuth.uid
 
@@ -100,7 +100,7 @@ class RegisterActivity : AppCompatActivity() {
         hashMap["name"] = name
         hashMap["profileImage"] = ""
         hashMap["userType"] = "user"
-        hashMap["timestamp"] = timestamp
+        hashMap["phoneNum"] = phonenumber
 
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
             .getReference("Users")
