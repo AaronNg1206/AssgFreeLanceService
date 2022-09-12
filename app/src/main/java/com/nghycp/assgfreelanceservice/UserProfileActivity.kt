@@ -63,7 +63,7 @@ class UserProfileActivity : AppCompatActivity() {
                         Glide.with(this@UserProfileActivity)
                             .load(profileImage)
                             .placeholder(R.drawable.user)
-                            .into(binding.imageView4)
+                            .into(binding.imageEdit)
                     }
                     catch (e: Exception){
 
