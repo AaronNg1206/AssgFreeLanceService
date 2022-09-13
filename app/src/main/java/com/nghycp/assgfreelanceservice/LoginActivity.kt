@@ -11,6 +11,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -86,7 +88,8 @@ class LoginActivity : AppCompatActivity() {
 
         val firebaseUser = firebaseAuth.currentUser!!
 
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            .getReference("Users")
         ref.child(firebaseUser.uid)
             .addListenerForSingleValueEvent(object : ValueEventListener{
 

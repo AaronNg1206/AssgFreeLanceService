@@ -9,6 +9,8 @@ import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -88,7 +90,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun updateUserInfo() {
         progressDialog.setMessage("Saving User Info...")
 
-        val timestamp = System.currentTimeMillis()
+//        val timestamp = System.currentTimeMillis()
 
         val uid = firebaseAuth.uid
 
@@ -98,15 +100,16 @@ class RegisterActivity : AppCompatActivity() {
         hashMap["name"] = name
         hashMap["profileImage"] = ""
         hashMap["userType"] = "user"
-        hashMap["timestamp"] = timestamp
+        hashMap["phoneNum"] = phonenumber
 
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            .getReference("Users")
         ref.child(uid!!)
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(this,"Account Created..", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@RegisterActivity, UserHomePage::class.java))
+                startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
                 finish()
             }
             .addOnFailureListener { e->

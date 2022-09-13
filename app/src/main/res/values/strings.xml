@@ -25,10 +25,16 @@
     <!--User Profile-->
     <string name="btn_UserProfile">Profile</string>
 
+    <!--Display First-->
     <string name="First">Free Lance Center</string>
     <string name="btn_LogoutAdmin">Logout</string>
     <string name="btn_LoginWithour">Continue WIthout Login</string>
 
+    <!--Option Menu-->
+    <string name="action_logout">LogOut</string>
+    <string name="action_userprofile">User Profile</string>
+    <string name="dis_userp">User Profile</string>
+    <string name="editprofile">Edit</string>
     <string name="btn_Logout">Log Out</string>
 
     <!--CM-->
@@ -68,5 +74,8 @@
     <string name="johor">Johor</string>
     <string name="kedah">Kedah</string>
     <string name="terengganu">Terengganu</string>
+    <string name="btn_back_user">back</string>
+    <string name="btn_edit_phone">Phone Number</string>
+    <string name="btn_edit_name">Name</string>
 
 </resources>
