@@ -22,6 +22,9 @@ class UserHomePage : AppCompatActivity() {
         binding = ActivityUserHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.buttonAddNewJob.setOnClickListener {
+
+        }
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
     }

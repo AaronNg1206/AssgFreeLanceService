@@ -80,5 +80,6 @@
     <string name="title_activity_job_show_layout">JobShowLayoutActivity</string>
     <string name="Price">Price</string>
     <string name="date">Date</string>
+    <string name="BrowseJob">Browse Job</string>
 
 </resources>

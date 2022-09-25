@@ -52,6 +52,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.2'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation 'com.google.firebase:firebase-database:20.0.6'
+    implementation 'com.google.firebase:firebase-auth:21.0.8'
+    implementation 'androidx.room:room-common:2.3.0'
+    implementation 'androidx.room:room-ktx:2.3.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 
     testImplementation 'junit:junit:4.13.2'
