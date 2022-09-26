@@ -27,13 +27,13 @@ class UserProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserProfileBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_user_profile)
+        setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
         loadUserInfo()
 
         binding.backIconBtn.setOnClickListener{
-            startActivity(Intent(this,UserHomePage::class.java))
+            onBackPressed()
         }
 
         binding.editIconBtn.setOnClickListener {
@@ -46,7 +46,7 @@ class UserProfileActivity : AppCompatActivity() {
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .getReference("Users")
         ref.child(firebaseAuth.uid!!)
-            .addListenerForSingleValueEvent(object: ValueEventListener{
+            .addValueEventListener(object: ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val email = "${snapshot.child("email").value}"
                     val name = "${snapshot.child("name").value}"
@@ -56,9 +56,9 @@ class UserProfileActivity : AppCompatActivity() {
                     val uid = "${snapshot.child("uid").value}"
 
                     binding.disname.text = name
-                    binding.textView6.text = email
-                    binding.textView8.text = phoneNum
-                    binding.textView10.text = userType
+                    binding.disemail.text = email
+                    binding.disnum.text = phoneNum
+                    binding.distype.text = userType
 
                     try {
                         Glide.with(this@UserProfileActivity)

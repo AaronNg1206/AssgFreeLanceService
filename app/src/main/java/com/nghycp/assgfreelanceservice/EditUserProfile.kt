@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import com.nghycp.assgfreelanceservice.databinding.ActivityEditUserProfileBinding
 import java.lang.Exception
 
@@ -91,7 +92,7 @@ class EditUserProfile : AppCompatActivity() {
         progressDialog.setMessage("Uploading Profile image")
         progressDialog.show()
 
-        val filePathAndName = "ProfileImages/" + firebaseAuth.uid
+        val filePathAndName = "ProfileImages/"+ firebaseAuth.uid
 
         val reference = FirebaseStorage.getInstance().getReference(filePathAndName)
         reference.putFile(imageUri!!)
@@ -99,6 +100,7 @@ class EditUserProfile : AppCompatActivity() {
                 val uriTask: Task<Uri> = takeSnapshot.storage.downloadUrl
                 while (!uriTask.isSuccessful);
                 val uploadedImageUrl = "${uriTask.result}"
+
 
                 updateProfile(uploadedImageUrl)
 
@@ -174,16 +176,17 @@ class EditUserProfile : AppCompatActivity() {
 
     private fun showImageAttachMenu() {
         val popupMenu = PopupMenu(this, binding.imageEdit)
-        popupMenu.menu.add(Menu.NONE, 0, 0, "Camera")
         popupMenu.menu.add(Menu.NONE, 0, 0, "Gallery")
+        popupMenu.menu.add(Menu.NONE, 1, 1, "Camera")
         popupMenu.show()
 
         popupMenu.setOnMenuItemClickListener { item ->
             val id = item.itemId
             if (id == 0) {
-                pickImageCamera()
-            } else if (id == 1) {
                 pickImageGallery()
+
+            } else if (id == 1) {
+                pickImageCamera()
 
             }
             true
@@ -206,22 +209,22 @@ class EditUserProfile : AppCompatActivity() {
 
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-        cameraActivityResultLauncher.launch(intent)
+        //cameraActivityResultLauncher.launch(intent)
     }
 
-    private val cameraActivityResultLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult(),
-        ActivityResultCallback<ActivityResult> { result ->
-
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data = result.data
-
-                binding.imageEdit.setImageURI(imageUri)
-            } else {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show()
-            }
-        }
-    )
+//    private val cameraActivityResultLauncher = registerForActivityResult(
+//        ActivityResultContracts.StartActivityForResult(),
+//        ActivityResultCallback<ActivityResult> { result ->
+//
+//            if (result.resultCode == Activity.RESULT_OK) {
+//                val data = result.data
+//
+//                binding.imageEdit.setImageURI(imageUri)
+//            } else {
+//                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//    )
 
     private val galleryActivityResultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult(),

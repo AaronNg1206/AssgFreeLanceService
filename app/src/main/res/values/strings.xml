@@ -37,6 +37,9 @@
     <string name="editprofile">Edit</string>
     <string name="btn_Logout">Log Out</string>
 
+    <string name="btn_back_user">back</string>
+    <string name="btn_edit_phone">Phone Number</string>
+    <string name="btn_edit_name">Name</string>
     <!--CM-->
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -74,9 +77,6 @@
     <string name="johor">Johor</string>
     <string name="kedah">Kedah</string>
     <string name="terengganu">Terengganu</string>
-    <string name="btn_back_user">back</string>
-    <string name="btn_edit_phone">Phone Number</string>
-    <string name="btn_edit_name">Name</string>
     <string name="title_activity_job_show_layout">JobShowLayoutActivity</string>
     <string name="Price">Price</string>
     <string name="date">Date</string>
