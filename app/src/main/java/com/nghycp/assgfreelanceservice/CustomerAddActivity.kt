@@ -2,8 +2,10 @@ package com.nghycp.assgfreelanceservice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.nghycp.assgfreelanceservice.database.JobDatabase
@@ -22,14 +24,8 @@ class CustomerAddActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonAdd.setOnClickListener {
-            val title =binding.editTextJobTitle.text.toString()
-            val category = binding.spinnerJobCategory.toString()
-            val description = binding.editTextJobDescription.text.toString()
-            val dueDate = binding.editTextDate.text.toString()
-            val address = binding.editTextAddress.text.toString()
-            val state = binding.spinnerState.toString()
-            val salary =binding.editTextNumberSalary.text.toString()
 
+            validateAddJob()
             database = FirebaseDatabase.getInstance().getReference("Job")
 
             database.child(title).setValue(title).addOnSuccessListener {
@@ -52,5 +48,53 @@ class CustomerAddActivity : AppCompatActivity() {
 
     }
 
+    private var title = ""
+    private var category = ""
+    private var description = ""
+    private var dueDate = ""
+    private var address = ""
+    private var state = ""
+    private var salary = ""
 
+    private fun validateAddJob(){
+        title = binding.editTextJobTitle.text.toString().trim()
+        category = binding.spinnerJobCategory.toString().trim()
+        description = binding.editTextJobDescription.text.toString().trim()
+        dueDate = binding.editTextDate.text.toString().trim()
+        address = binding.editTextAddress.text.toString().trim()
+        state = binding.spinnerState.toString().trim()
+        salary =binding.editTextNumberSalary.text.toString().trim()
+
+        if (title.isEmpty()) {
+            Toast.makeText(this, "Enter your title", Toast.LENGTH_SHORT).show()
+        }
+        else if (description.isEmpty()){
+            Toast.makeText(this,"Enter description", Toast.LENGTH_SHORT).show()
+        }
+        else if (salary.isEmpty()){
+            Toast.makeText(this,"Enter Salary", Toast.LENGTH_SHORT).show()
+        }
+
+        else {
+            createUserAccount()
+        }
+    }
+
+    private fun createUserAccount() {
+
+        /*      progressDialog.setMessage("Creating Account..")
+              progressDialog.show()
+
+              firebaseAuth.createUserWithEmailAndPassword(email, password)
+                  .addOnSuccessListener {
+                      updateUserInfo()
+                  }
+                  .addOnFailureListener { e->
+                      progressDialog.dismiss()
+                      Toast.makeText(this,"Failed to Register due to ${e.message}", Toast.LENGTH_SHORT).show()
+                  }
+
+          }*/
+
+    }
 }

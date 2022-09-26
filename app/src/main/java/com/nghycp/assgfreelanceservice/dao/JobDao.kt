@@ -15,12 +15,10 @@ interface JobDao {
     @Update
     suspend fun update(job: Job)
 
-    @Query("SELECT * FROM job")
+    @Query("SELECT * FROM Job")
     fun getAll(): LiveData<List<Job>>
 
-/*    @Query("SELECT * FROM Job WHERE title = :title")
-    fun findByTitle(Title: String) : Job
+   @Query("SELECT * FROM Job WHERE title = :title")
+    fun findByTitle(title: String) : Job
 
-    @Query("SELECT * FROM contact WHERE name LIKE :name")
-    fun findByName(name: String): Contact*/
 }
