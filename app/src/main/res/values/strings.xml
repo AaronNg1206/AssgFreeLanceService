@@ -37,9 +37,17 @@
     <string name="editprofile">Edit</string>
     <string name="btn_Logout">Log Out</string>
 
+    <!--Edit User Profile-->
     <string name="btn_back_user">back</string>
     <string name="btn_edit_phone">Phone Number</string>
     <string name="btn_edit_name">Name</string>
+
+    <!--Admin Menu-->
+    <string name="btn_add_job">Job Add</string>
+    <string name="btn_edit_job">Job Modify</string>
+    <string name="btn_show_job">Job Show</string>
+    <string name="btn_dlt_job">Job Delete</string>
+
     <!--CM-->
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

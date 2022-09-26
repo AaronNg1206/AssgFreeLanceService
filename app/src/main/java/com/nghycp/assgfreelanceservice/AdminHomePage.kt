@@ -3,6 +3,8 @@ package com.nghycp.assgfreelanceservice
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
 import com.nghycp.assgfreelanceservice.databinding.ActivityAdminHomePageBinding
 
@@ -20,11 +22,6 @@ class AdminHomePage : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
-        binding.btnLogout.setOnClickListener {
-            firebaseAuth.signOut()
-            checkUser()
-        }
-
     }
 
     private fun checkUser() {
@@ -40,4 +37,20 @@ class AdminHomePage : AppCompatActivity() {
         }
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.admin_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.admin_logout -> {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
