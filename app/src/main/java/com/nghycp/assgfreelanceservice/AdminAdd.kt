@@ -35,7 +35,6 @@ class AdminAdd : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             validateData()
-            startActivity(Intent(this,AdminHomePage::class.java))
         }
 
     }
@@ -81,24 +80,25 @@ class AdminAdd : AppCompatActivity() {
     private fun addFirebase() {
         progressDialog.show()
 
-        val uid = firebaseAuth.uid
 
         val hashMap = HashMap<String, Any?>()
-        hashMap["uid"] = uid
+
         hashMap["title"] = title
         hashMap["category"] = category
         hashMap["Description"] = desc
         hashMap["Address"] = add
         hashMap["State"] = state
         hashMap["Salary"] = salary
+        hashMap["uid"] = "${firebaseAuth.uid}"
 
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
             .getReference("Job")
-        ref.child("uid")
+        ref.child("${firebaseAuth.uid}")
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(this,"Added Successfully...",Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, AdminHomePage::class.java))
             }
             .addOnFailureListener { e->
                 progressDialog.dismiss()

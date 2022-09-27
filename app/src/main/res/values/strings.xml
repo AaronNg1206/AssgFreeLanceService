@@ -60,6 +60,10 @@
     <string name="Salary">Salary</string>
     <string name="addJob">Add Job</string>
     <string name="jobTitle">Job Title</string>
+    <string name="JobTitle" />
+    <string name="JobDesc" />
+    <string name="JobAddress" />
+    <string name="JobSalary" />
     <string-array name="JobCategory">
         <item>Choose an Category</item>
         <item>Computer IT</item>
@@ -114,6 +118,7 @@
     <string name="BrowseJob">Browse Job</string>
     <string name="State">State</string>
     <string name="jobCategory">Job Category</string>
+
 
 
 </resources>
