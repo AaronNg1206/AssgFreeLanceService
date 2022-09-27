@@ -48,12 +48,38 @@
     <string name="btn_show_job">Job Show</string>
     <string name="btn_dlt_job">Job Delete</string>
 
-    <!--CM-->
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <!--Add Job-->
+    <string name="btn_add">Confirm</string>
+    <string name="Address">Address</string>
+    <string name="Salary">Salary</string>
+    <string name="addJob">Add Job</string>
+    <string name="jobTitle">Job Title</string>
+    <string-array name="JobCategory">
+        <item>Choose an Category</item>
+        <item>Computer IT</item>
+        <item>Accounting &amp; Finance</item>
+        <item>Healthcare</item>
+        <item>Writing $amp; Editing</item>
+        <item>Education</item>
+        <item>Marketing</item>
+        <item>Data Entry</item>
+        <item>Administrative</item>
+    </string-array>
+    <string-array name="State">
+        <item>Choose a State</item>
+        <item>Pahang</item>
+        <item>Selangor</item>
+        <item>Perlis</item>
+        <item>Perak</item>
+        <item>Kuantan</item>
+        <item>Kuala Lumpur</item>
+    </string-array>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -61,14 +87,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="JobArea">Job Area</string>
     <string name="browseAll">Browse All ></string>
-    <string name="addJob">Add Job</string>
-    <string name="jobTitle">Job Title</string>
-    <string name="jobCategory">Job Category</string>
+
+
     <string name="Description">Job Description</string>
     <string name="dueDate">Application Due Date (optional)</string>
-    <string name="Address">Address</string>
-    <string name="State">State</string>
-    <string name="Salary">Salary</string>
+
     <string name="cancel" />
     <string name="Add">Add</string>
     <string name="HintDescription">Fill In Job Desc</string>
@@ -89,5 +112,8 @@
     <string name="Price">Price</string>
     <string name="date">Date</string>
     <string name="BrowseJob">Browse Job</string>
+    <string name="State">State</string>
+    <string name="jobCategory">Job Category</string>
+
 
 </resources>

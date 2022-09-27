@@ -22,6 +22,22 @@ class AdminHomePage : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
+        binding.btnAdd.setOnClickListener {
+            startActivity(Intent(this,AdminAdd::class.java))
+        }
+
+        binding.btnModify.setOnClickListener {
+
+        }
+
+        binding.btnShow.setOnClickListener {
+
+        }
+
+        binding.btnDelete.setOnClickListener {
+
+        }
+
     }
 
     private fun checkUser() {
