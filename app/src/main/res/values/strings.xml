@@ -85,6 +85,9 @@
         <item>Kuala Lumpur</item>
     </string-array>
 
+    <string name="TitleJob">Job Title</string>
+    <string name="jobRv"/>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -118,7 +121,6 @@
     <string name="BrowseJob">Browse Job</string>
     <string name="State">State</string>
     <string name="jobCategory">Job Category</string>
-
 
 
 </resources>
