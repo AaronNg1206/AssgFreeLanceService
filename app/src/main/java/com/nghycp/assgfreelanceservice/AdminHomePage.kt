@@ -34,10 +34,6 @@ class AdminHomePage : AppCompatActivity() {
 
         }
 
-        binding.btnDelete.setOnClickListener {
-
-        }
-
     }
 
     private fun checkUser() {
