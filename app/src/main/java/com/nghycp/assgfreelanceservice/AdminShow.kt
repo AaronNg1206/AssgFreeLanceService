@@ -69,12 +69,12 @@ class AdminShow : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 //clear the list before start
                 jobArrayList.clear()
-                for(ds in snapshot.children){
-                    //get data as model
-                    val model = ds.getValue(ModelJob::class.java)
-                    //add to array list
-                    jobArrayList.add(model!!)
-                }
+//                for(ds in snapshot.children){
+//                    //get data as model
+//                    val model = ds.getValue(ModelJob::class.java)
+//                    //add to array list
+//                    jobArrayList.add(model!!)
+//                }
                 adapterJob = AdapterJob(this@AdminShow,jobArrayList)
 
                 binding.jobRV.adapter = adapterJob
