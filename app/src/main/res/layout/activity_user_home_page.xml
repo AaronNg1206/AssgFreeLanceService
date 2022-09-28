@@ -27,7 +27,8 @@
         android:contentDescription="@string/KualaLumpur"
         app:layout_constraintEnd_toStartOf="@+id/imageViewPenang"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewJobArea" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewJobArea"
+        app:srcCompat="@drawable/kl" />
 
     <ImageView
         android:id="@+id/imageViewPenang"
@@ -40,7 +41,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imageViewPerak"
         app:layout_constraintStart_toEndOf="@+id/imageViewKl"
         app:layout_constraintTop_toTopOf="@+id/imageViewKl"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/penang" />
 
     <ImageView
         android:id="@+id/imageViewPerak"
@@ -53,7 +55,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imageViewMelaka"
         app:layout_constraintStart_toEndOf="@+id/imageViewPenang"
         app:layout_constraintTop_toTopOf="@+id/imageViewPenang"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/perak" />
 
     <ImageView
         android:id="@+id/imageViewMelaka"
@@ -66,7 +69,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toEndOf="@+id/imageViewPerak"
-        app:layout_constraintTop_toTopOf="@+id/imageViewPerak" />
+        app:layout_constraintTop_toTopOf="@+id/imageViewPerak"
+        app:srcCompat="@drawable/melaka" />
 
     <ImageView
         android:id="@+id/imageViewKedah"
@@ -76,7 +80,8 @@
         android:contentDescription="@string/kedah"
         app:layout_constraintEnd_toEndOf="@+id/imageViewPerak"
         app:layout_constraintStart_toStartOf="@+id/imageViewPerak"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPerak" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPerak"
+        app:srcCompat="@drawable/kedah" />
 
     <ImageView
         android:id="@+id/imageViewJohor"
@@ -86,7 +91,8 @@
         android:contentDescription="@string/Johor"
         app:layout_constraintEnd_toEndOf="@+id/imageViewPenang"
         app:layout_constraintStart_toStartOf="@+id/imageViewPenang"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPenang" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPenang"
+        app:srcCompat="@drawable/johor" />
 
     <ImageView
         android:id="@+id/imageViewLangkawi"
@@ -95,7 +101,8 @@
         android:layout_marginTop="32dp"
         android:contentDescription="@string/Langkawi"
         app:layout_constraintStart_toStartOf="@+id/textViewKL"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKL" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewKL"
+        app:srcCompat="@drawable/langkawi" />
 
     <ImageView
         android:id="@+id/imageViewTerengganu"
@@ -107,6 +114,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageViewMelaka"
         app:layout_constraintTop_toBottomOf="@+id/textViewMelaka"
+        app:srcCompat="@drawable/terengganu"
         tools:ignore="ImageContrastCheck" />
 
     <TextView
@@ -148,16 +156,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageViewLangkawi"
         app:layout_constraintStart_toStartOf="@+id/imageViewLangkawi"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLangkawi" />
-
-    <TextView
-        android:id="@+id/textViewBrowseAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/browseAll"
-        android:textColor="#827717"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKedah" />
 
     <TextView
         android:id="@+id/textViewJohor"
@@ -231,13 +229,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="413dp"
-        android:layout_height="312dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/button_BrowseJob"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBrowseAll"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKedah"
         tools:ignore="MissingConstraints"
         tools:listitem="@layout/activity_job_show_layout" />
 
