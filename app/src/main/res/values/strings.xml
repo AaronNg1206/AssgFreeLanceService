@@ -118,7 +118,7 @@
     <string name="BrowseJob">Browse Job</string>
     <string name="State">State</string>
     <string name="jobCategory">Job Category</string>
-
+    <string name="btn_delete" />
 
 
 </resources>

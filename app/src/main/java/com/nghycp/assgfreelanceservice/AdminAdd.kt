@@ -86,6 +86,7 @@ class AdminAdd : AppCompatActivity() {
         hashMap["id"] = "$timestamp"
         hashMap["title"] = title
         hashMap["category"] = category
+        //hashMap["timestamp"] = timestamp
         hashMap["Description"] = desc
         hashMap["Address"] = add
         hashMap["State"] = state
@@ -99,7 +100,7 @@ class AdminAdd : AppCompatActivity() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(this,"Added Successfully...",Toast.LENGTH_SHORT).show()
-                //startActivity(Intent(this, AdminHomePage::class.java))
+                startActivity(Intent(this, AdminHomePage::class.java))
             }
             .addOnFailureListener { e->
                 progressDialog.dismiss()

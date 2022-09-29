@@ -154,7 +154,7 @@
         android:inputType="textPersonName"
         android:text="@string/JobAddress"
         android:textColor="#616161"
-        android:hint="Fill in the Job Address"
+        android:hint="Fill in the Job Address (Optional)"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
