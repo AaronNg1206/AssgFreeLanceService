@@ -4,8 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.app.AlertDialog
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobShowLayoutBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 
@@ -46,6 +51,7 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         var Salary : TextView = binding.jobShowPrice
         var state : TextView = binding.jobShowState
 
+        var applybtn: Button = binding.btnApply
         init {
             itemView.setOnClickListener{
                 listener.onItemClick(adapterPosition)
@@ -72,5 +78,65 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         holder.Salary.text = Salary
         holder.Description.text = Description
         holder.state.text = State
+
+        holder.applybtn.setOnClickListener {
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Apply Job")
+                .setMessage("Are u confirm to apply this job?").setPositiveButton("confirm"){a,d->
+                    Toast.makeText(context,"Apply...", Toast.LENGTH_SHORT).show()
+                   applyJob(model)
+        } .setNegativeButton("Cancel"){a,d->
+                    a.dismiss()
+                }.show()
+    }
+}
+
+    private fun applyJob(model: ModelJob) {
+        //get id of job to apply
+
+
+        val title = model.title
+        val category = model.category
+        val description = model.Description
+        val address = model.Address
+        val state = model.State
+        val salary = model.Salary
+        val uid = model.uid
+        val timestamp = System.currentTimeMillis()
+
+        val hashMap = HashMap<String, Any>()
+        hashMap["id"] = "$timestamp"
+        hashMap["title"] = title
+        hashMap["category"] = category
+        hashMap["Description"] = description
+        hashMap["Address"] = address
+        hashMap["State"] = state
+        hashMap["Salary"] = salary
+        hashMap["uid"] = uid
+
+        val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            .getReference("JobApply")
+
+        if (uid .equals(ref(uid))){
+            Toast.makeText(context, "Job Already taken!choose another job", Toast.LENGTH_SHORT).show()
+
+        }else{
+
+            ref.child("$timestamp")
+                .setValue(hashMap)
+                .addOnSuccessListener {
+                    Toast.makeText(context,"Successful apply",Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {e->
+                    Toast.makeText(context,"unable to apply due to ${e.message}",Toast.LENGTH_SHORT).show()
+                }
+        }
+
+
+    }
+
+    private fun ref(uid: String) {
+        Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            .getReference("JobApply")
     }
 }

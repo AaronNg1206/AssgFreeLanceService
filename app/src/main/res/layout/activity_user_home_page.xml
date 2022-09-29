@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageViewPerak"
         app:layout_constraintStart_toEndOf="@+id/imageViewKl"
         app:layout_constraintTop_toTopOf="@+id/imageViewKl"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/penang" />
 
     <ImageView
@@ -207,16 +207,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/editTTextEmail"
-        android:layout_width="35dp"
-        android:layout_height="19dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/hint_email"
-        app:layout_constraintBottom_toBottomOf="@+id/textEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textEmail" />
-
-    <TextView
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -224,7 +214,7 @@
         android:text="@string/hint_email"
         android:textColor="#004D40"
         app:layout_constraintBottom_toBottomOf="@+id/textViewJobArea"
-        app:layout_constraintEnd_toStartOf="@+id/editTTextEmail"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewJobArea" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -233,12 +223,14 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:background="@android:color/darker_gray"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/button_BrowseJob"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewKedah"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:listitem="@layout/activity_job_show_layout" />
 

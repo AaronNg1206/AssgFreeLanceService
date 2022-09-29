@@ -1,23 +1,16 @@
 package com.nghycp.assgfreelanceservice
 
-import android.app.Activity
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.*
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.nghycp.assgfreelanceservice.databinding.ActivityAdminShowBinding
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobShowBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 
-class JobShowActivity : AppCompatActivity() {
-
+class JobApplied : AppCompatActivity() {
     private lateinit var binding: ActivityJobShowBinding
 
     private lateinit var jobArrayList: ArrayList<ModelJob>
@@ -26,10 +19,8 @@ class JobShowActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityJobShowBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         loadJob()
 
         binding.buttonBack.setOnClickListener {
@@ -54,7 +45,7 @@ class JobShowActivity : AppCompatActivity() {
                     jobArrayList.add(model!!)
                 }
                 //set adapter
-                jobShowAdapter = JobShowAdapter(this@JobShowActivity, jobArrayList)
+                jobShowAdapter = JobShowAdapter(this@JobApplied, jobArrayList)
                 //set adapter to recycle view
                 binding.recyclerviewJobShow.adapter = jobShowAdapter
             }
@@ -69,5 +60,3 @@ class JobShowActivity : AppCompatActivity() {
 
 
 }
-
-

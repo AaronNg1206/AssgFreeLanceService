@@ -119,6 +119,9 @@
     <string name="State">State</string>
     <string name="jobCategory">Job Category</string>
     <string name="btn_delete" />
+    <string name="apply">Apply Now</string>
+    <string name="title_activity_job_applied">JobApplied</string>
+    <string name="JobApply">Job Apply</string>
 
 
 </resources>

@@ -85,6 +85,7 @@
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:contentDescription="@string/Description"
                 android:text="@string/Description"
                 android:textSize="14sp"
@@ -95,15 +96,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/jobShow_Price"
                 app:layout_constraintVertical_bias="0.2" />
-
-            <Button
-                android:id="@+id/btn_apply"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/apply"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/jobShow_description" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

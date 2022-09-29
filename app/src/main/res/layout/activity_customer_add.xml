@@ -81,8 +81,8 @@
 
     <EditText
         android:id="@+id/editTextJobDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="393dp"
+        android:layout_height="130dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/HintDescription"

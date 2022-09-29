@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityUserHomePageBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 
+
 class UserHomePage : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserHomePageBinding
@@ -26,6 +27,8 @@ class UserHomePage : AppCompatActivity() {
     private lateinit var jobArrayList: ArrayList<ModelJob>
 
     private lateinit var jobShowAdapter: JobShowAdapter
+
+    private lateinit var imageIdList : ArrayList<Int>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,12 +46,20 @@ class UserHomePage : AppCompatActivity() {
         }
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
+
         binding.imageViewKl.setOnClickListener {
 
             var intent = Intent(this,JobShowActivity::class.java)
             startActivity(intent)
         }
+        binding.imageViewJohor.setOnClickListener {
+
+            var intent = Intent(this,JobShowActivity::class.java)
+            startActivity(intent)
+        }
+
     }
+
 
     private fun checkUser() {
         val firebaseUser  = firebaseAuth.currentUser
@@ -69,13 +80,13 @@ class UserHomePage : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-         when (item.itemId) {
+        when (item.itemId) {
             R.id.btn_logout_menu -> {
-            startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this,LoginActivity::class.java))
             }
-             R.id.btn_userprofile -> {
-                 startActivity(Intent(this,UserProfileActivity::class.java))
-             }
+            R.id.btn_userprofile -> {
+                startActivity(Intent(this,UserProfileActivity::class.java))
+            }
         }
 
         return super.onOptionsItemSelected(item)
@@ -102,6 +113,7 @@ class UserHomePage : AppCompatActivity() {
 
             jobShowAdapter.setOnItemClickListener(object :JobShowAdapter.onItemClicklistener{
                 override fun onItemClick(position: Int){
+
 
                 }
             })
