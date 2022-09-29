@@ -25,9 +25,6 @@
             android:name=".AdminShow"
             android:exported="false" />
         <activity
-            android:name=".AdminEdit"
-            android:exported="false" />
-        <activity
             android:name=".JobShowLayoutActivity"
             android:exported="false"
             android:label="@string/title_activity_job_show_layout"

@@ -26,10 +26,6 @@ class AdminHomePage : AppCompatActivity() {
             startActivity(Intent(this,AdminAdd::class.java))
         }
 
-        binding.btnModify.setOnClickListener {
-
-        }
-
         binding.btnShow.setOnClickListener {
             startActivity(Intent(this,AdminShow::class.java))
         }
