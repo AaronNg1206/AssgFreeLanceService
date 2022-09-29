@@ -21,7 +21,9 @@
         android:id="@+id/textViewJobTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/jobTitle"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +36,8 @@
         android:layout_height="wrap_content"
         android:text="@string/jobCategory"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextJobTitle"
+        app:layout_constraintStart_toStartOf="@+id/editTextJobTitle"
         app:layout_constraintTop_toBottomOf="@+id/editTextJobTitle" />
 
     <TextView
@@ -44,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/Description"
-        android:textColor="@color/purple_200"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerJobCategory"
+        app:layout_constraintStart_toStartOf="@+id/spinnerJobCategory"
         app:layout_constraintTop_toBottomOf="@+id/spinnerJobCategory" />
 
     <EditText
@@ -59,8 +61,8 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="@dimen/min_height"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewJobTitle"
+        app:layout_constraintStart_toStartOf="@+id/textViewJobTitle"
         app:layout_constraintTop_toBottomOf="@+id/textViewJobTitle" />
 
     <Spinner
@@ -69,10 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/jobCategory"
+        android:entries="@array/JobCategory"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewJobCategory"
+        app:layout_constraintStart_toStartOf="@+id/textViewJobCategory"
         app:layout_constraintTop_toBottomOf="@+id/textViewJobCategory"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -88,36 +91,9 @@
         android:minHeight="48dp"
         android:shadowColor="#332F2F"
         android:textColorHint="#FFA19A9A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewJobDescription"
+        app:layout_constraintStart_toStartOf="@+id/textViewJobDescription"
         app:layout_constraintTop_toBottomOf="@+id/textViewJobDescription"
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/textViewDueDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/dueDate"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextJobDescription" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="@string/hintDueDate"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        android:minHeight="@dimen/min_height"
-        android:textColorHint="@color/hintText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDueDate"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -127,9 +103,9 @@
         android:layout_marginTop="16dp"
         android:text="@string/Address"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextJobDescription"
+        app:layout_constraintStart_toStartOf="@+id/editTextJobDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextJobDescription" />
 
     <EditText
         android:id="@+id/editTextAddress"
@@ -142,8 +118,8 @@
         android:inputType="textPersonName"
         android:minHeight="@dimen/min_height"
         android:textColorHint="@color/hintText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAddrees"
+        app:layout_constraintStart_toStartOf="@+id/textViewAddrees"
         app:layout_constraintTop_toBottomOf="@+id/textViewAddrees"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
@@ -154,8 +130,8 @@
         android:layout_marginTop="16dp"
         android:text="@string/State"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAddress"
+        app:layout_constraintStart_toStartOf="@+id/editTextAddress"
         app:layout_constraintTop_toBottomOf="@+id/editTextAddress" />
 
     <Spinner
@@ -164,9 +140,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/State"
+        android:entries="@array/State"
         android:minHeight="@dimen/min_height"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewState"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewState"
         app:layout_constraintTop_toBottomOf="@+id/textViewState"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -180,8 +158,8 @@
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="@dimen/min_height"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSalary"
+        app:layout_constraintStart_toStartOf="@+id/textViewSalary"
         app:layout_constraintTop_toBottomOf="@+id/textViewSalary" />
 
     <TextView
@@ -191,8 +169,8 @@
         android:layout_marginTop="16dp"
         android:text="@string/Salary"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerState"
+        app:layout_constraintStart_toStartOf="@+id/spinnerState"
         app:layout_constraintTop_toBottomOf="@+id/spinnerState" />
 
     <Button

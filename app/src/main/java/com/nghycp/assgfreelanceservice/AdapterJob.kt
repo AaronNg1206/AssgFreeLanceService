@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.RowJobBinding
+import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>{
 

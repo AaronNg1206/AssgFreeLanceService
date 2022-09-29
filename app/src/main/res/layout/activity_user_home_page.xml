@@ -228,7 +228,7 @@
         app:layout_constraintTop_toTopOf="@+id/textViewJobArea" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/recyclerviewJobShow"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"

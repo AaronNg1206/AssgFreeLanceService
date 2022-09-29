@@ -9,6 +9,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityAdminShowBinding
+import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class AdminShow : AppCompatActivity() {
 

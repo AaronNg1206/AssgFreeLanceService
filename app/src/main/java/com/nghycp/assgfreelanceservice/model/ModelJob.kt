@@ -1,4 +1,4 @@
-package com.nghycp.assgfreelanceservice
+package com.nghycp.assgfreelanceservice.model
 
 class ModelJob {
 

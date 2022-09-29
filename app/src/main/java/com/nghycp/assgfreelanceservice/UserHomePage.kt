@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.nghycp.assgfreelanceservice.databinding.ActivityUserHomePageBinding
+import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class UserHomePage : AppCompatActivity() {
 
@@ -22,8 +23,12 @@ class UserHomePage : AppCompatActivity() {
         binding = ActivityUserHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.buttonBrowseJob.setOnClickListener {
+            startActivity(Intent(this, JobShowActivity::class.java))
+        }
         binding.buttonAddNewJob.setOnClickListener {
 
+            startActivity(Intent(this, CustomerAddActivity::class.java))
         }
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
@@ -59,5 +64,7 @@ class UserHomePage : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-
+    companion object{
+        val JobList = ArrayList<ModelJob>()
+    }
 }

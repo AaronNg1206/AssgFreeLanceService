@@ -9,17 +9,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.database.FirebaseDatabase
 import com.nghycp.assgfreelanceservice.database.JobDatabase
-import com.nghycp.assgfreelanceservice.model.Job
+import com.nghycp.assgfreelanceservice.model.ModelJob
 import com.nghycp.assgfreelanceservice.repository.JobRepository
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class jobViewModel (application: Application) :
     AndroidViewModel(application){
     //Create a UI dataset
-    val jobList: LiveData<List<Job>>
+    val jobList: LiveData<List<ModelJob>>
 
     private val jobRepository: JobRepository
-    var selectedJob:Job =Job("","","","","","","","")
+    var selectedJob: ModelJob =ModelJob("","","","","","","","")
 
 
     init {
@@ -35,15 +36,15 @@ class jobViewModel (application: Application) :
     }
 
     //Launching a coroutine
-    fun insert(job: Job) = viewModelScope.launch {
+    fun insert(job: ModelJob) = viewModelScope.launch {
         jobRepository.insert(job)
     }
 
-    fun delete(job: Job) = viewModelScope.launch {
+    fun delete(job: ModelJob) = viewModelScope.launch {
         jobRepository.delete(job)
     }
 
-    fun update(job: Job) = viewModelScope.launch {
+    fun update(job: ModelJob) = viewModelScope.launch {
         jobRepository.update(job)
     }
 
@@ -59,13 +60,13 @@ class jobViewModel (application: Application) :
                     .child("title")
                     .setValue(job.title)
 
-                myRef.child(id).child(job.description)
-                    .child("description")
-                    .setValue(job.description)
+                myRef.child(id).child(job.Description)
+                    .child("Description")
+                    .setValue(job.Description)
 
-                myRef.child(id).child(job.state)
+                myRef.child(id).child(job.Salary)
                     .child("state")
-                    .setValue(job.state)
+                    .setValue(job.Salary)
             }
         }else
             {
