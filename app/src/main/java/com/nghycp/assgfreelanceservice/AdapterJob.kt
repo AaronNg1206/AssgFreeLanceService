@@ -5,18 +5,19 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.RowJobBinding
 
-class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>{
+class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
 
     private val context: Context
-    private val jobArrayList: ArrayList<ModelJob>
+    public var jobArrayList: ArrayList<ModelJob>
+    private var filterList: ArrayList<ModelJob>
+    
+    private var filter: FilterJob? = null
 
     private lateinit var binding: RowJobBinding
 
@@ -24,6 +25,7 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>{
     constructor(context: Context, jobArrayList: ArrayList<ModelJob>) {
         this.context = context
         this.jobArrayList = jobArrayList
+        this.filterList = jobArrayList
     }
 
 
@@ -61,6 +63,7 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>{
                 .setNegativeButton("Cancel"){a,d->
                     a.dismiss()
                 }
+                .show()
         }
 
     }
@@ -89,6 +92,13 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>{
     inner class HolderJob(itemView: View): RecyclerView.ViewHolder(itemView){
         var jobTv:TextView = binding.jobTv
         var deleteBtn:ImageButton = binding.deleteBtn
+    }
+
+    override fun getFilter(): Filter {
+        if(filter == null){
+            filter = FilterJob(filterList,this)
+        }
+        return filter as FilterJob
     }
 
 }
