@@ -233,6 +233,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toTopOf="@+id/button_BrowseJob"
         app:layout_constraintEnd_toEndOf="parent"

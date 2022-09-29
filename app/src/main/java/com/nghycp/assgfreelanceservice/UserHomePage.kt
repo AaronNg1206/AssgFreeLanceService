@@ -33,6 +33,7 @@ class UserHomePage : AppCompatActivity() {
         binding = ActivityUserHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loadJob()
+
         binding.buttonBrowseJob.setOnClickListener {
             startActivity(Intent(this, JobShowActivity::class.java))
         }
@@ -42,6 +43,11 @@ class UserHomePage : AppCompatActivity() {
         }
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
+        binding.imageViewKl.setOnClickListener {
+
+            var intent = Intent(this,JobShowActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun checkUser() {
@@ -93,6 +99,13 @@ class UserHomePage : AppCompatActivity() {
                 jobShowAdapter = JobShowAdapter(this@UserHomePage, jobArrayList)
                 //set adapter to recycle view
                 binding.recyclerviewJobShow.adapter = jobShowAdapter
+
+            jobShowAdapter.setOnItemClickListener(object :JobShowAdapter.onItemClicklistener{
+                override fun onItemClick(position: Int){
+
+                }
+            })
+
             }
 
             override fun onCancelled(error: DatabaseError) {

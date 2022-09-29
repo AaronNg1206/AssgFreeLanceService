@@ -9,13 +9,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobShowLayoutBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 
-class JobShowAdapter : RecyclerView.Adapter<JobShowAdapter.HolderJob>{
+class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
     private val context: Context
      var jobArrayList: ArrayList<ModelJob>
 
     private lateinit var binding: ActivityJobShowLayoutBinding
 
+    private lateinit var mlistener : onItemClicklistener
 
+    interface onItemClicklistener{
+        fun  onItemClick(position: Int)
+    }
+    fun setOnItemClickListener(listener : onItemClicklistener){
+        mlistener = listener
+    }
     //constructor
     constructor(context: Context, jobArrayList: ArrayList<ModelJob>) {
         this.context = context
@@ -26,19 +33,24 @@ class JobShowAdapter : RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         //inflate bind row_job.xml
         binding = ActivityJobShowLayoutBinding.inflate(LayoutInflater.from(context),parent,false)
 
-        return HolderJob(binding.root)
+        return HolderJob(binding.root, mlistener)
     }
     override fun getItemCount(): Int {
         //number of items in list
         return jobArrayList.size
     }
-    inner class HolderJob(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class HolderJob(itemView: View, listener: onItemClicklistener): RecyclerView.ViewHolder(itemView){
         var title : TextView = binding.JobShowTitle
         var category : TextView = binding.jobShowJobCategory
         var Description : TextView = binding.jobShowDescription
         var Salary : TextView = binding.jobShowPrice
         var state : TextView = binding.jobShowState
 
+        init {
+            itemView.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
+        }
        //var deleteBtn: ImageButton = binding.deleteBtn
     }
 

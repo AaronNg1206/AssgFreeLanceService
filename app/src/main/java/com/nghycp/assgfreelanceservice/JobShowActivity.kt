@@ -33,7 +33,12 @@ class JobShowActivity : AppCompatActivity() {
 
         loadJob()
 
+        binding.buttonBack.setOnClickListener {
+            onBackPressed()
+        }
+
     }
+
     private fun loadJob() {
         jobArrayList = ArrayList()
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
