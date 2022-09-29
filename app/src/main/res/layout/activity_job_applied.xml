@@ -7,7 +7,7 @@
     tools:context=".JobApplied">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewJobShow"
+        android:id="@+id/recyclerviewJobApply"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/darker_gray"
@@ -32,13 +32,13 @@
         app:srcCompat="@drawable/back" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textViewJobApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/JobApply"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerviewJobShow"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerviewJobApply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/RecentApplyJob"
+        android:title="@string/recentApplyJob" />
+    <item
         android:id="@+id/btn_userprofile"
         android:title="@string/action_userprofile" />
     <item

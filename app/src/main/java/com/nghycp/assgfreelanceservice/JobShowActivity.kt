@@ -1,18 +1,12 @@
 package com.nghycp.assgfreelanceservice
 
-import android.app.Activity
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.*
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.nghycp.assgfreelanceservice.databinding.ActivityAdminShowBinding
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobShowBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 

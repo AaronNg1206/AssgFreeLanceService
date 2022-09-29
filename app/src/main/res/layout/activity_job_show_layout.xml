@@ -8,7 +8,7 @@
     tools:context=".JobShowLayoutActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/card_view1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -21,12 +21,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/JobShow_title"
+                android:id="@+id/JobShowTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -35,14 +35,14 @@
                 android:textColor="#2D838F"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/jobShow_State"
+                app:layout_constraintBottom_toBottomOf="@+id/jobShowState"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/jobShow_State"
+                app:layout_constraintTop_toTopOf="@+id/jobShowState"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/jobShow_State"
+                android:id="@+id/jobShowState"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -50,12 +50,12 @@
                 android:text="@string/State"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/jobShow_jobCategory"
-                app:layout_constraintEnd_toStartOf="@+id/jobShow_jobCategory"
-                app:layout_constraintTop_toTopOf="@+id/jobShow_jobCategory" />
+                app:layout_constraintBottom_toBottomOf="@+id/jobShowJobCategory"
+                app:layout_constraintEnd_toStartOf="@+id/jobShowJobCategory"
+                app:layout_constraintTop_toTopOf="@+id/jobShowJobCategory" />
 
             <TextView
-                android:id="@+id/jobShow_jobCategory"
+                android:id="@+id/jobShowJobCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -68,7 +68,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/jobShow_Price"
+                android:id="@+id/jobShowPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -78,10 +78,10 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/JobShow_title" />
+                app:layout_constraintTop_toBottomOf="@+id/jobShowJobCategory" />
 
             <TextView
-                android:id="@+id/jobShow_description"
+                android:id="@+id/textViewJobDescription"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -93,17 +93,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/jobShow_Price"
+                app:layout_constraintTop_toBottomOf="@+id/jobShowPrice"
                 app:layout_constraintVertical_bias="0.2" />
 
             <Button
-                android:id="@+id/btn_apply"
+                android:id="@+id/btnApply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/apply"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/jobShow_description" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewJobDescription" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

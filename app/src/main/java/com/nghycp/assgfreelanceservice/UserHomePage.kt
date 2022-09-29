@@ -87,7 +87,9 @@ class UserHomePage : AppCompatActivity() {
             R.id.btn_userprofile -> {
                 startActivity(Intent(this,UserProfileActivity::class.java))
             }
-
+            R.id.RecentApplyJob -> {
+                startActivity(Intent( this,JobApplied::class.java))
+            }
         }
 
         return super.onOptionsItemSelected(item)
@@ -112,12 +114,7 @@ class UserHomePage : AppCompatActivity() {
                 //set adapter to recycle view
                 binding.recyclerviewJobShow.adapter = jobShowAdapter
 
-            jobShowAdapter.setOnItemClickListener(object :JobShowAdapter.onItemClicklistener{
-                override fun onItemClick(position: Int){
 
-
-                }
-            })
 
             }
 

@@ -16,18 +16,12 @@ import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
     private val context: Context
-     var jobArrayList: ArrayList<ModelJob>
+    var jobArrayList: ArrayList<ModelJob>
 
     private lateinit var binding: ActivityJobShowLayoutBinding
 
-    private lateinit var mlistener : onItemClicklistener
 
-    interface onItemClicklistener{
-        fun  onItemClick(position: Int)
-    }
-    fun setOnItemClickListener(listener : onItemClicklistener){
-        mlistener = listener
-    }
+
     //constructor
     constructor(context: Context, jobArrayList: ArrayList<ModelJob>) {
         this.context = context
@@ -38,26 +32,21 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         //inflate bind row_job.xml
         binding = ActivityJobShowLayoutBinding.inflate(LayoutInflater.from(context),parent,false)
 
-        return HolderJob(binding.root, mlistener)
+        return HolderJob(binding.root)
     }
     override fun getItemCount(): Int {
         //number of items in list
         return jobArrayList.size
     }
-    inner class HolderJob(itemView: View, listener: onItemClicklistener): RecyclerView.ViewHolder(itemView){
+    inner class HolderJob(itemView: View): RecyclerView.ViewHolder(itemView){
         var title : TextView = binding.JobShowTitle
         var category : TextView = binding.jobShowJobCategory
-        var Description : TextView = binding.jobShowDescription
+        var Description : TextView = binding.textViewJobDescription
         var Salary : TextView = binding.jobShowPrice
         var state : TextView = binding.jobShowState
 
         var applybtn: Button = binding.btnApply
-        init {
-            itemView.setOnClickListener{
-                listener.onItemClick(adapterPosition)
-            }
-        }
-       //var deleteBtn: ImageButton = binding.deleteBtn
+
     }
 
     override fun onBindViewHolder(holder: HolderJob, position: Int) {
@@ -84,12 +73,12 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
             builder.setTitle("Apply Job")
                 .setMessage("Are u confirm to apply this job?").setPositiveButton("confirm"){a,d->
                     Toast.makeText(context,"Apply...", Toast.LENGTH_SHORT).show()
-                   applyJob(model)
-        } .setNegativeButton("Cancel"){a,d->
+                    applyJob(model)
+                } .setNegativeButton("Cancel"){a,d->
                     a.dismiss()
                 }.show()
+        }
     }
-}
 
     private fun applyJob(model: ModelJob) {
         //get id of job to apply
@@ -117,10 +106,10 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
             .getReference("JobApply")
 
-        if (uid .equals(ref(uid))){
-            Toast.makeText(context, "Job Already taken!choose another job", Toast.LENGTH_SHORT).show()
+        //if (uid .equals(ref(uid))){
+        //   Toast.makeText(context, "Job Already taken!choose another job", Toast.LENGTH_SHORT).show()
 
-        }else{
+        //}else{
 
             ref.child("$timestamp")
                 .setValue(hashMap)
@@ -129,14 +118,11 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
                 }
                 .addOnFailureListener {e->
                     Toast.makeText(context,"unable to apply due to ${e.message}",Toast.LENGTH_SHORT).show()
-                }
+        //        }
         }
 
 
     }
 
-    private fun ref(uid: String) {
-        Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
-            .getReference("JobApply")
-    }
+
 }

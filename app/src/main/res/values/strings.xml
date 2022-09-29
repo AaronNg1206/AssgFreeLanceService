@@ -122,6 +122,9 @@
     <string name="apply">Apply Now</string>
     <string name="title_activity_job_applied">JobApplied</string>
     <string name="JobApply">Job Apply</string>
+    <string name="recentApplyJob">Recent Apply Job</string>
+    <string name="complete">complete</string>
+    <string name="InProcess">In Process</string>
 
 
 </resources>
