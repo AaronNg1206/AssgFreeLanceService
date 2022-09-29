@@ -80,9 +80,10 @@ class AdminAdd : AppCompatActivity() {
     private fun addFirebase() {
         progressDialog.show()
 
+        val timestamp = System.currentTimeMillis()
 
-        val hashMap = HashMap<String, Any?>()
-
+        val hashMap = HashMap<String, Any>()
+        hashMap["id"] = "$timestamp"
         hashMap["title"] = title
         hashMap["category"] = category
         hashMap["Description"] = desc
@@ -93,12 +94,12 @@ class AdminAdd : AppCompatActivity() {
 
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
             .getReference("Job")
-        ref.child("${firebaseAuth.uid}")
+        ref.child("$timestamp")
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 Toast.makeText(this,"Added Successfully...",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, AdminHomePage::class.java))
+                //startActivity(Intent(this, AdminHomePage::class.java))
             }
             .addOnFailureListener { e->
                 progressDialog.dismiss()

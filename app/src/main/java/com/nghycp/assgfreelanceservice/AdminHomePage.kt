@@ -31,8 +31,10 @@ class AdminHomePage : AppCompatActivity() {
         }
 
         binding.btnShow.setOnClickListener {
-            startActivity(Intent(this,AdminShow::class.java))
+
         }
+
+
 
     }
 
