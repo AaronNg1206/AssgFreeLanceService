@@ -17,22 +17,10 @@
             android:name=".AdminAdd"
             android:exported="false" />
         <activity
-            android:name=".AdminDelete"
-            android:exported="false" />
-        <activity
             android:name=".AdminShow"
             android:exported="false" />
         <activity
             android:name=".AdminEdit"
-            android:exported="false" />
-        <activity
-            android:name=".Job_Show"
-            android:exported="false" />
-        <activity
-            android:name=".Job_Edit"
-            android:exported="false" />
-        <activity
-            android:name=".Job_Add"
             android:exported="false" />
         <activity
             android:name=".JobShowLayoutActivity"
