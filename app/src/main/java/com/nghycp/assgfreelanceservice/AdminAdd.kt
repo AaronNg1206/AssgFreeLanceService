@@ -13,7 +13,7 @@ import com.nghycp.assgfreelanceservice.databinding.ActivityAdminAddBinding
 
 private lateinit var binding: ActivityAdminAddBinding
 
-private lateinit var firebaseAuth: FirebaseAuth
+lateinit var firebaseAuth: FirebaseAuth
 
 private lateinit var progressDialog: ProgressDialog
 
