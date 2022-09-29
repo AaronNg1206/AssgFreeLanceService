@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.RowJobBinding
+import com.nghycp.assgfreelanceservice.databinding.RowJobsBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
@@ -20,7 +21,7 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
     
     private var filter: FilterJob? = null
 
-    private lateinit var binding: RowJobBinding
+    private lateinit var binding: RowJobsBinding
 
     //constructor
     constructor(context: Context, jobArrayList: ArrayList<ModelJob>) {
@@ -32,7 +33,7 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderJob {
         //inflate bind row_job.xml
-        binding = RowJobBinding.inflate(LayoutInflater.from(context),parent,false)
+        binding = RowJobsBinding.inflate(LayoutInflater.from(context),parent,false)
 
         return HolderJob(binding.root)
     }
@@ -51,6 +52,11 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
 
         //set data
         holder.jobTv.text = title
+        holder.descTv.text = Description
+        holder.salaryTv.text = Salary
+        holder.addressTv.text = Address
+        holder.categoryTv.text = category
+        holder.stateTv.text = State
 
         //handle click, delete job
         holder.deleteBtn.setOnClickListener {
@@ -77,7 +83,7 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
         ref.child(id)
             .removeValue()
             .addOnSuccessListener {
-                Toast.makeText(context,"Deleted...",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Successful delete",Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {e->
                 Toast.makeText(context,"unable to delete due to ${e.message}",Toast.LENGTH_SHORT).show()
@@ -92,6 +98,12 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
     //view holder class to hold or init UI view for row job.xml
     inner class HolderJob(itemView: View): RecyclerView.ViewHolder(itemView){
         var jobTv:TextView = binding.jobTv
+        var descTv:TextView = binding.descTv
+        var salaryTv:TextView = binding.salaryTv
+        var addressTv:TextView = binding.addressTv
+        var categoryTv:TextView = binding.categoryTv
+        var stateTv:TextView = binding.stateTv
+
         var deleteBtn:ImageButton = binding.deleteBtn
     }
 

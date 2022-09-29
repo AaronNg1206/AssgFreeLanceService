@@ -26,7 +26,7 @@ class FilterJob: Filter {
             constraint = constraint.toString().uppercase()
             val filteredModels: ArrayList<ModelJob> = ArrayList()
             for (i in 0 until filterList.size) {
-                if (filterList[i].title.uppercase().contains(constraint)) {
+                if (filterList[i].category.uppercase().contains(constraint)) {
                     //add to filter list
                     filteredModels.add(filterList[i])
                 }
