@@ -2,6 +2,8 @@ package com.nghycp.assgfreelanceservice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -9,7 +11,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityAdminShowBinding
-import com.nghycp.assgfreelanceservice.model.ModelJob
+import java.lang.Exception
 
 class AdminShow : AppCompatActivity() {
 
@@ -27,6 +29,25 @@ class AdminShow : AppCompatActivity() {
         setContentView(binding.root)
 
         loadJob()
+
+        binding.searchEt.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                try{
+                    adapterJob.filter.filter(s)
+                }
+                catch(e: Exception){
+
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
 
         binding.backBtn.setOnClickListener {
             onBackPressed()
