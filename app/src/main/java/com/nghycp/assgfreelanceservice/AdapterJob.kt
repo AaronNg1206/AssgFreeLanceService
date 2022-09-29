@@ -92,6 +92,7 @@ class AdapterJob :RecyclerView.Adapter<AdapterJob.HolderJob>, Filterable{
     //view holder class to hold or init UI view for row job.xml
     inner class HolderJob(itemView: View): RecyclerView.ViewHolder(itemView){
         var jobTv:TextView = binding.jobTv
+
         var deleteBtn:ImageButton = binding.deleteBtn
     }
 

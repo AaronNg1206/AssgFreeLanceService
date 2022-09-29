@@ -14,11 +14,6 @@ interface JobDao {
 
     @Update
     suspend fun update(job: ModelJob)
-
-  @Query("SELECT * FROM Job")
-    fun getAll(): LiveData<List<ModelJob>>
-/*
-   @Query("SELECT * FROM Job WHERE Title = :title")
-    fun findByTitle(title: String) : ModelJob*/
+    
 
 }

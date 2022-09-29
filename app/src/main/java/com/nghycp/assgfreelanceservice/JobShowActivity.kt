@@ -7,46 +7,76 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.nghycp.assgfreelanceservice.databinding.ActivityAdminShowBinding
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobShowBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 import com.nghycp.assgfreelanceservice.viewmodel.jobViewModel
 
 class JobShowActivity : AppCompatActivity() {
 
-    private var _binding: ActivityJobShowBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: ActivityJobShowBinding
+
     private lateinit var jobArrayList: ArrayList<ModelJob>
+
+    private lateinit var jobShowAdapter: JobShowAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_job_show)
 
-        // getting the recyclerview by its id
-        val recyclerview = _binding?.recyclerviewJobShow
+        binding = ActivityJobShowBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // this creates a vertical layout Manager
-        binding.recyclerviewJobShow.layoutManager = LinearLayoutManager(this)
+        loadJob()
 
-        // ArrayList of class jobViewModel
+    }
+    private fun loadJob() {
         jobArrayList = ArrayList()
+        val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            .getReference("Job")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                //clear list before starting adding data into it
+                jobArrayList.clear()
+                for(ds in snapshot.children){
+                    //get data as model
+                    val model = ds.getValue(ModelJob::class.java)
 
-        //This will pass the ArrayList to our Adapter
-        val adapter = AdapterJob(this@JobShowActivity, jobArrayList)
+                    //add to array list
+                    jobArrayList.add(model!!)
+                }
+                //set adapter
+                jobShowAdapter = JobShowAdapter(this@JobShowActivity, jobArrayList)
+                //set adapter to recycle view
+                binding.recyclerviewJobShow.adapter = jobShowAdapter
+            }
 
+            override fun onCancelled(error: DatabaseError) {
 
+            }
+        })
 
-        //Setting the Adapter with the recyclerview
-        recyclerview?.adapter = adapter
     }
 
 
-    override fun onStart() {
-        Log.d("onStart", "Job Show Activity")
-        super.onStart()
-    }
-
-    override fun onResume() {
-        Log.d("onResume", "Job Show Activity")
-        super.onResume()
-    }
 
 }
+
+
+/*
+
+// getting the recyclerview by its id
+val recyclerview = binding?.recyclerviewJobShow
+
+// this creates a vertical layout Manager
+binding.recyclerviewJobShow.layoutManager = LinearLayoutManager(this)
+
+//This will pass the ArrayList to our Adapter
+adapterJob = AdapterJob(this@JobShowActivity, jobArrayList)
+
+//Setting the Adapter with the recyclerview
+binding.recyclerviewJobShow.adapter = adapterJob*/
