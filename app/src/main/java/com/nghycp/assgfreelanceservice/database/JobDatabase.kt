@@ -5,9 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import  com.nghycp.assgfreelanceservice.dao.JobDao
-import  com.nghycp.assgfreelanceservice.model.Job
+import  com.nghycp.assgfreelanceservice.model.ModelJob
 
-@Database(entities = arrayOf(Job::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(ModelJob::class), version = 1, exportSchema = false)
 abstract class JobDatabase: RoomDatabase() {
     abstract fun JobDao(): JobDao
 

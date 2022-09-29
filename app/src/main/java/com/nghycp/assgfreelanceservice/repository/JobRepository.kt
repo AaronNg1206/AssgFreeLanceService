@@ -5,27 +5,27 @@ import androidx.lifecycle.LiveData
 import androidx.room.Query
 import com.google.firebase.database.FirebaseDatabase
 import com.nghycp.assgfreelanceservice.dao.JobDao
-import com.nghycp.assgfreelanceservice.model.Job
+import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class JobRepository(private val jobDao: JobDao )  {
     //Cache copy of dataset
-val allJob: LiveData<List<Job>> = jobDao.getAll()
+val allJob: LiveData<List<ModelJob>> = jobDao.getAll()
 
-suspend fun insert(job: Job){
+suspend fun insert(job: ModelJob){
     jobDao.insert(job)
 }
 
-suspend fun delete(job: Job){
+suspend fun delete(job: ModelJob){
     jobDao.delete(job)
 }
 
-suspend fun update(job: Job){
+suspend fun update(job: ModelJob){
     jobDao.update(job)
 }
 
-fun findByTitle(title: String): Job{
+/*fun findByTitle(title: String): ModelJob{
     return jobDao.findByTitle(title)
-}
+}*/
 
 fun syncJob(id: String){
     val database = FirebaseDatabase.getInstance()
@@ -39,13 +39,13 @@ fun syncJob(id: String){
                 .child("title")
                 .setValue(job.title)
 
-            myRef.child(id).child(job.description)
-                .child("description")
-                .setValue(job.description)
+            myRef.child(id).child(job.Description)
+                .child("Description")
+                .setValue(job.Description)
 
-            myRef.child(id).child(job.state)
-                .child("state")
-                .setValue(job.state)
+            myRef.child(id).child(job.State)
+                .child("State")
+                .setValue(job.State)
         }
     }else{
         Log.d("SyncJob", "all Job is null or empty")

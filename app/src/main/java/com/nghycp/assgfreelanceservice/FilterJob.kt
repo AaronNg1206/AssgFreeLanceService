@@ -1,6 +1,7 @@
 package com.nghycp.assgfreelanceservice
 
 import android.widget.Filter
+import com.nghycp.assgfreelanceservice.model.ModelJob
 
 class FilterJob: Filter {
 
