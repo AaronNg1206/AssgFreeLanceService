@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 class jobViewModel (application: Application) :
     AndroidViewModel(application){
     //Create a UI dataset
-    val jobList: LiveData<List<ModelJob>>
+
 
     private val jobRepository: JobRepository
     var selectedJob: ModelJob =ModelJob("","","","","","","","")
@@ -26,13 +26,11 @@ class jobViewModel (application: Application) :
     init {
         val JobDao = JobDatabase.getDatabase(application).JobDao()
         jobRepository = JobRepository(JobDao)
-        jobList = jobRepository.allJob
+
 
         val preferences = application.getSharedPreferences(
             application.applicationContext.packageName.toString(), Context.MODE_PRIVATE
         )
-
-
     }
 
     //Launching a coroutine
@@ -48,31 +46,6 @@ class jobViewModel (application: Application) :
         jobRepository.update(job)
     }
 
-    fun syncJob(id: String){
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("job")
 
-        /*val jobList = jobDao.getAll()*/
-        if(!jobList.value.isNullOrEmpty()){
-            for(job in jobList.value!!.listIterator()){
-
-                myRef.child(id).child(job.title)
-                    .child("title")
-                    .setValue(job.title)
-
-                myRef.child(id).child(job.Description)
-                    .child("Description")
-                    .setValue(job.Description)
-
-                myRef.child(id).child(job.Salary)
-                    .child("state")
-                    .setValue(job.Salary)
-            }
-        }else
-            {
-            Toast.makeText(getApplication(), "Job List is empty", Toast.LENGTH_SHORT).show()
-            Log.d("SyncJob", "allJob is null or empty")
-        }
-    }
 
 }
