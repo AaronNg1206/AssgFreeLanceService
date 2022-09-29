@@ -18,7 +18,7 @@ class AdminShow : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdminShowBinding
 
-    private lateinit var firebaseAuth: FirebaseAuth
+    //private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var jobArrayList: ArrayList<ModelJob>
 

@@ -87,6 +87,7 @@ class UserHomePage : AppCompatActivity() {
             R.id.btn_userprofile -> {
                 startActivity(Intent(this,UserProfileActivity::class.java))
             }
+
         }
 
         return super.onOptionsItemSelected(item)
