@@ -26,33 +26,21 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/JobShowTitle"
+                android:id="@+id/JobShow_Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:contentDescription="@string/jobTitle"
                 android:text="@string/jobTitle"
                 android:textColor="#2D838F"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/jobShowState"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/jobShowState"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <TextView
-                android:id="@+id/jobShowState"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="@string/State"
-                android:text="@string/State"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/jobShowJobCategory"
-                app:layout_constraintEnd_toStartOf="@+id/jobShowJobCategory"
-                app:layout_constraintTop_toTopOf="@+id/jobShowJobCategory" />
+
 
             <TextView
                 android:id="@+id/jobShowJobCategory"
@@ -104,6 +92,16 @@
                 android:text="@string/apply"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewJobDescription" />
+
+            <TextView
+                android:id="@+id/JobShow_State"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/State"
+                app:layout_constraintBottom_toBottomOf="@+id/jobShowJobCategory"
+                app:layout_constraintEnd_toStartOf="@+id/jobShowJobCategory"
+                app:layout_constraintTop_toTopOf="@+id/jobShowJobCategory" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

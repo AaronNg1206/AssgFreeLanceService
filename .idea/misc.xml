@@ -7,7 +7,6 @@
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/drawable/divider.xml" value="0.294" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/drawable/editicon.xml" value="0.287" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_add.xml" value="0.2988679352838745" />
-        <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_edit.xml" value="0.29605263157894735" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_home_page.xml" value="0.3098958333333333" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_show.xml" value="0.3098958333333333" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_customer_add.xml" value="0.2971014492753623" />
@@ -28,17 +27,22 @@
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/menu/userprofile.xml" value="0.3098958333333333" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/mipmap-anydpi-v26/editbutton.xml" value="0.1595" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/drawable/edit_done.xml" value="0.258" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.2095" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_add.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_edit.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_home_page.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_admin_show.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_customer_add.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_display_first.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_edit_user_profile.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_forget_password.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_applied.xml" value="0.2569444444444444" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_apply_layout.xml" value="0.5132530120481927" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_applied.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_apply_layout.xml" value="0.536" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_show.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_show_layout.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_show_layout.xml" value="0.72" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_recent_add_job.xml" value="0.536" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_recycler_view_home_page.xml" value="0.2564102564102564" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_register.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_user_home_page.xml" value="0.536" />
@@ -47,10 +51,13 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/fragment_first.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/fragment_second.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/job_detail_layout.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/recent_add_layout.xml" value="0.6396495071193866" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/row_job.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/row_jobs.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/menu/admin_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/menu/main.xml" value="0.4" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.137" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/mipmap-anydpi-v26/ic_launcher_logo_icon.xml" value="0.137" />
       </map>
     </option>
   </component>

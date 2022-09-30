@@ -18,6 +18,7 @@ import com.nghycp.assgfreelanceservice.model.ModelJob
 class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
     private val context: Context
     var jobArrayList: ArrayList<ModelJob>
+    var progress = "In Progress"
 
     private lateinit var binding: ActivityJobApplyLayoutBinding
 
@@ -44,6 +45,7 @@ class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
         var Salary : TextView = binding.JobApplySalary
         var state : TextView = binding.JobApplyState
 
+
         var completebtn: Button = binding.btnComplete
 
     }
@@ -68,7 +70,7 @@ class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
         holder.state.text = State
 
         holder.completebtn.setOnClickListener {
-
+            progress = "Completed"
         }
     }
 

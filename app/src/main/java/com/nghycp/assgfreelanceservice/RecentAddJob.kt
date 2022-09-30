@@ -10,7 +10,7 @@ import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobAppliedBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
 
-class JobApplied : AppCompatActivity() {
+class RecentAddJob : AppCompatActivity() {
     private lateinit var binding: ActivityJobAppliedBinding
 
     private lateinit var jobArrayList: ArrayList<ModelJob>
@@ -19,20 +19,15 @@ class JobApplied : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityJobAppliedBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_recent_add_job)
         loadJob()
-
-        binding.buttonBack.setOnClickListener {
-            onBackPressed()
-        }
-
+        //filterJob()
     }
-
     private fun loadJob() {
         jobArrayList = ArrayList()
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
-            .getReference("JobApply")
+            .getReference("Job")
+
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 //clear list before starting adding data into it
@@ -40,25 +35,18 @@ class JobApplied : AppCompatActivity() {
                 for(ds in snapshot.children){
                     //get data as model
                     val model = ds.getValue(ModelJob::class.java)
-
                     //add to array list
                     jobArrayList.add(model!!)
                 }
                 //set adapter
-                JobApplyadapter = JobApplyadapter(this@JobApplied, jobArrayList)
+                JobApplyadapter = JobApplyadapter(this@RecentAddJob, jobArrayList)
                 //set adapter to recycle view
                 binding.recyclerviewJobApply.adapter = JobApplyadapter
-
-
             }
-
             override fun onCancelled(error: DatabaseError) {
-
             }
         })
 
     }
-
-
 
 }

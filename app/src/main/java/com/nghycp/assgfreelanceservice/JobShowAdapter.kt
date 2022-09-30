@@ -43,7 +43,7 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         var category : TextView = binding.jobShowJobCategory
         var Description : TextView = binding.textViewJobDescription
         var Salary : TextView = binding.jobShowPrice
-        var state : TextView = binding.jobShowState
+        var state : TextView = binding.JobShowState
 
         var applybtn: Button = binding.btnApply
 
@@ -106,11 +106,6 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
             .getReference("JobApply")
 
-        //if (uid .equals(ref(uid))){
-        //   Toast.makeText(context, "Job Already taken!choose another job", Toast.LENGTH_SHORT).show()
-
-        //}else{
-
             ref.child("$timestamp")
                 .setValue(hashMap)
                 .addOnSuccessListener {
@@ -118,7 +113,7 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
                 }
                 .addOnFailureListener {e->
                     Toast.makeText(context,"unable to apply due to ${e.message}",Toast.LENGTH_SHORT).show()
-        //        }
+
         }
 
 

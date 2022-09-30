@@ -4,17 +4,11 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
-import android.view.LayoutInflater
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.nghycp.assgfreelanceservice.database.JobDatabase
 import com.nghycp.assgfreelanceservice.databinding.ActivityCustomerAddBinding
-import kotlinx.coroutines.Job
 
 class CustomerAddActivity : AppCompatActivity() {
 
@@ -37,7 +31,6 @@ class CustomerAddActivity : AppCompatActivity() {
 
         binding.buttonAdd.setOnClickListener {
             validateAddJob()
-
         }
         binding.buttonCancel.setOnClickListener {
             onBackPressed()

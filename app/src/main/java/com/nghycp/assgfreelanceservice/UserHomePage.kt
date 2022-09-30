@@ -1,13 +1,11 @@
 package com.nghycp.assgfreelanceservice
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -27,8 +25,8 @@ class UserHomePage : AppCompatActivity() {
     private lateinit var jobArrayList: ArrayList<ModelJob>
 
     private lateinit var jobShowAdapter: JobShowAdapter
+    private val TAG = "MyActivity"
 
-    private lateinit var imageIdList : ArrayList<Int>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,16 +46,62 @@ class UserHomePage : AppCompatActivity() {
         checkUser()
 
         binding.imageViewKl.setOnClickListener {
-
-            var intent = Intent(this,JobShowActivity::class.java)
+            val filterlist = binding.textViewKL.text.toString()
+            //Log.v("MainActivity", stateKL);
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
+            startActivity(intent)
+        }
+        binding.imageViewPerak.setOnClickListener {
+            val filterlist = binding.textViewPerak.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
+            startActivity(intent)
+        }
+        binding.imageViewTerengganu.setOnClickListener {
+            val filterlist = binding.textViewTerengganu.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
             startActivity(intent)
         }
         binding.imageViewJohor.setOnClickListener {
-
-            var intent = Intent(this,JobShowActivity::class.java)
+            val filterlist = binding.textViewJohor.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
             startActivity(intent)
         }
-
+        binding.imageViewKedah.setOnClickListener {
+            val filterlist = binding.textViewKedah.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
+            startActivity(intent)
+        }
+        binding.imageViewLangkawi.setOnClickListener {
+            val filterlist = binding.textViewLangkawi.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
+            startActivity(intent)
+        }
+        binding.imageViewPenang.setOnClickListener {
+            val filterlist = binding.textViewPenang.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
+            startActivity(intent)
+        }
+        binding.imageViewMelaka.setOnClickListener {
+            val filterlist = binding.textViewMelaka.text.toString()
+            var intent = Intent(this,JobShowActivity::class.java).also {
+                it.putExtra("State", filterlist)
+            }
+            startActivity(intent)
+        }
     }
 
 
@@ -90,10 +134,14 @@ class UserHomePage : AppCompatActivity() {
             R.id.RecentApplyJob -> {
                 startActivity(Intent( this,JobApplied::class.java))
             }
+            R.id.RecentAddJob -> {
+                startActivity(Intent( this,RecentAddJob::class.java))
+            }
         }
 
         return super.onOptionsItemSelected(item)
     }
+
     private fun loadJob() {
         jobArrayList = ArrayList()
         val ref = Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
@@ -105,7 +153,6 @@ class UserHomePage : AppCompatActivity() {
                 for(ds in snapshot.children){
                     //get data as model
                     val model = ds.getValue(ModelJob::class.java)
-
                     //add to array list
                     jobArrayList.add(model!!)
                 }

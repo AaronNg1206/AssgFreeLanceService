@@ -29,9 +29,6 @@ class AdminHomePage : AppCompatActivity() {
         binding.btnShow.setOnClickListener {
             startActivity(Intent(this,AdminShow::class.java))
         }
-
-
-
     }
 
     private fun checkUser() {
@@ -45,9 +42,7 @@ class AdminHomePage : AppCompatActivity() {
 
             binding.emailAdmin.text = email
         }
-
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.admin_menu, menu)
         return true

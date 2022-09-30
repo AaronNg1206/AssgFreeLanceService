@@ -85,6 +85,12 @@
         <item>Kuala Lumpur</item>
     </string-array>
 
+    <string-array name="Progress">
+        <item>In progress</item>
+        <item>Schedule</item>
+        <item>Completed</item>
+        <item>Canceled</item>
+    </string-array>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -125,6 +131,6 @@
     <string name="recentApplyJob">Recent Apply Job</string>
     <string name="complete">complete</string>
     <string name="InProcess">In Process</string>
-
+    <string name="recentAddJob">Recent Added Job</string>
 
 </resources>
