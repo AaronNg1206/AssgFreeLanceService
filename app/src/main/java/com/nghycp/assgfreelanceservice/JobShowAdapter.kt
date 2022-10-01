@@ -22,8 +22,6 @@ import com.nghycp.assgfreelanceservice.model.ModelJob
 class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
     private val context: Context
     var jobArrayList: ArrayList<ModelJob>
-
-    private lateinit var  validateList: ArrayList<ModelJob>
     private lateinit var binding: ActivityJobShowLayoutBinding
     private lateinit var jobShowAdapter: JobShowAdapter
     private var noRepeat = true
@@ -111,47 +109,27 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         hashMap["uid"] = uidOnClick
         hashMap["Status"] = status
 
-        jobArrayList = ArrayList()
-        validateList = ArrayList()
         val ref =
             Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
-                .getReference("JobApply")
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                //clear list before starting adding data into it
-                jobArrayList.clear()
-                for (ds in snapshot.children) {
-                    //get data as model
-                    val model = ds.getValue(ModelJob::class.java)
-                    //add to array list
-                    jobArrayList.add(model!!)
-                }
+                .getReference("JobApply").child(idOnClick).get()
 
-                //Log.v("ID", jobArrayList.get(0).id)
-                for (i in jobArrayList.indices) {
-                    //Toast.makeText(context, (jobArrayList.get(i).id).toString(), Toast.LENGTH_SHORT).show()
-                    if (jobArrayList.get(i).id == idOnClick) {
-                        //Log.v("id4", jobArrayList.get(i).id)
-                        //Log.v("id5", idOnClick)
-                        Toast.makeText(
+        ref.addOnSuccessListener{
+            if (it.exists()){
+                Toast.makeText(
                             context,
                             "This Job already taken, Pls choose another",
                             Toast.LENGTH_SHORT
                         ).show()
-                        noRepeat = false
-                        break
-                    } else if (jobArrayList.get(i).id != idOnClick) {
-                        //Log.v("id3", jobArrayList.get(i).id)
-                        //Log.v("id2", idOnClick)
-                        validateList.add(jobArrayList.get(i))
+            }
+            else{
+                val ref2 =
+                    Firebase.database("https://freelanceservice-48fbf-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                        .getReference("JobApply").child(idOnClick)
 
-                    }
-                }
-                if (noRepeat) {
-                    ref.child(idOnClick)
-                        .setValue(hashMap)
-                        .addOnSuccessListener {
+                ref2.setValue(hashMap)
+                    .addOnSuccessListener {
                             Toast.makeText(context, "Successful apply", Toast.LENGTH_SHORT).show()
+                            jobArrayList.add(model)
                         }
                         .addOnFailureListener { e ->
                             Toast.makeText(
@@ -160,12 +138,12 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
-                }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
-        })
+        }
+
+    }
+    init {
+        jobArrayList = ArrayList()
     }
 }
