@@ -33,7 +33,4 @@
         app:srcCompat="@drawable/back" />
 
 
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

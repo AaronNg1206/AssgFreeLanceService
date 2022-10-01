@@ -135,7 +135,13 @@ class UserHomePage : AppCompatActivity() {
                 startActivity(Intent( this,JobApplied::class.java))
             }
             R.id.RecentAddJob -> {
-                startActivity(Intent( this,RecentAddJob::class.java))
+                val firebaseUser  = firebaseAuth.currentUser?.uid
+
+                var intent = Intent(this,RecentAddJob::class.java).also {
+                    it.putExtra("uid", firebaseUser)
+                }
+                startActivity(intent)
+
             }
         }
 
