@@ -75,6 +75,7 @@ class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
 
         holder.completebtn.setOnClickListener {
 
+
         }
     }
 

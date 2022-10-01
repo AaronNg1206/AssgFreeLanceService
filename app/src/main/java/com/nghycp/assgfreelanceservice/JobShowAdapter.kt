@@ -34,7 +34,7 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
         this.jobArrayList = jobArrayList
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderJob {
-        //inflate bind row_job.xml
+
         binding = ActivityJobShowLayoutBinding.inflate(LayoutInflater.from(context),parent,false)
 
         return HolderJob(binding.root)
@@ -56,14 +56,14 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
     override fun onBindViewHolder(holder: HolderJob, position: Int) {
         //get data
         val model = jobArrayList[position]
-        //val id = model.id
+        val id = model.id
         val title = model.title
         val category = model.category
         val Description = model.Description
-        //val Address = model.Address
+        val Address = model.Address
         val State = model.State
         val Salary = model.Salary
-        //val uid = model.uid
+        val uid = model.uid
 
         //set data
         holder.title.text = title
