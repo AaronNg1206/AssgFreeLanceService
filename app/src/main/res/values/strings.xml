@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AssgFreeLanceService</string>
+    <string name="app_name">FreeLanceService</string>
 
     <!--Login Activity-->
     <string name="hint_email">Email</string>
