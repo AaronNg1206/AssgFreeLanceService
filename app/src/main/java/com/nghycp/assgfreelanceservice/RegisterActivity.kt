@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener {
             validateDate()
-            startActivity(Intent(this,LoginActivity::class.java))
+            //startActivity(Intent(this,LoginActivity::class.java))
         }
     }
 
