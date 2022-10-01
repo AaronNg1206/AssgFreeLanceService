@@ -15,7 +15,7 @@ class RecentAddJob : AppCompatActivity() {
 
     private lateinit var jobArrayList: ArrayList<ModelJob>
 
-    private lateinit var JobApplyadapter: JobApplyadapter
+    private lateinit var JobShowAdapter: JobShowAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +39,11 @@ class RecentAddJob : AppCompatActivity() {
                     jobArrayList.add(model!!)
                 }
                 //set adapter
-                JobApplyadapter = JobApplyadapter(this@RecentAddJob, jobArrayList)
+
+                JobShowAdapter = JobShowAdapter(this@RecentAddJob, jobArrayList)
                 //set adapter to recycle view
-                binding.recyclerviewJobApply.adapter = JobApplyadapter
+
+                binding.recyclerviewJobApply.adapter = JobShowAdapter
             }
             override fun onCancelled(error: DatabaseError) {
             }

@@ -25,7 +25,7 @@ class UserHomePage : AppCompatActivity() {
     private lateinit var jobArrayList: ArrayList<ModelJob>
 
     private lateinit var jobShowAdapter: JobShowAdapter
-    private val TAG = "MyActivity"
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

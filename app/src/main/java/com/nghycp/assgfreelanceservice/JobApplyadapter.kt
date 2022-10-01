@@ -14,11 +14,13 @@ import com.google.firebase.ktx.Firebase
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobAppliedBinding
 import com.nghycp.assgfreelanceservice.databinding.ActivityJobApplyLayoutBinding
 import com.nghycp.assgfreelanceservice.model.ModelJob
+import org.w3c.dom.Text
+import java.util.*
+import kotlin.collections.ArrayList
 
 class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
     private val context: Context
     var jobArrayList: ArrayList<ModelJob>
-    var progress = "In Progress"
 
     private lateinit var binding: ActivityJobApplyLayoutBinding
 
@@ -44,7 +46,7 @@ class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
         var Description : TextView = binding.JobApplyDescription
         var Salary : TextView = binding.JobApplySalary
         var state : TextView = binding.JobApplyState
-
+        var progressStatus : String = binding.textviewProgessStatus.toString()//
 
         var completebtn: Button = binding.btnComplete
 
@@ -61,6 +63,7 @@ class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
         val State = model.State
         val Salary = model.Salary
         val uid = model.uid
+        val progressStatus = model.progressStatus
 
         //set data
         holder.title.text = title
@@ -68,9 +71,10 @@ class JobApplyadapter: RecyclerView.Adapter<JobApplyadapter.HolderJob>{
         holder.Salary.text = Salary
         holder.Description.text = Description
         holder.state.text = State
+        holder.progressStatus = progressStatus
 
         holder.completebtn.setOnClickListener {
-            progress = "Completed"
+
         }
     }
 
