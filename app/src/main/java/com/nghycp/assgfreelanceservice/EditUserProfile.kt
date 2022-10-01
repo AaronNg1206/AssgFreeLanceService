@@ -209,22 +209,22 @@ class EditUserProfile : AppCompatActivity() {
 
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-        //cameraActivityResultLauncher.launch(intent)
+        cameraActivityResultLauncher.launch(intent)
     }
 
-//    private val cameraActivityResultLauncher = registerForActivityResult(
-//        ActivityResultContracts.StartActivityForResult(),
-//        ActivityResultCallback<ActivityResult> { result ->
-//
-//            if (result.resultCode == Activity.RESULT_OK) {
-//                val data = result.data
-//
-//                binding.imageEdit.setImageURI(imageUri)
-//            } else {
-//                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//    )
+    private val cameraActivityResultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+        ActivityResultCallback<ActivityResult> { result ->
+
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+
+                binding.imageEdit.setImageURI(imageUri)
+            } else {
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show()
+            }
+        }
+    )
 
     private val galleryActivityResultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
