@@ -11,6 +11,7 @@ class ModelJob {
     var Salary:String = ""
     var uid:String = ""
     var progressStatus:String = ""
+    var idOnClick:String =""
 
     //empty constructor, required by firebase
     constructor()
@@ -25,7 +26,8 @@ class ModelJob {
         State: String,
         Salary: String,
         uid: String,
-        progressStatus: String
+        progressStatus: String,
+        idOnClick:String
     ) {
         this.id = id
         this.title = title
@@ -36,6 +38,7 @@ class ModelJob {
         this.Salary = Salary
         this.uid = uid
         this.progressStatus = progressStatus
+        this.idOnClick = idOnClick
     }
 
 }

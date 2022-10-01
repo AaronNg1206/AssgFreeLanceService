@@ -14,6 +14,9 @@
         android:theme="@style/Theme.AssgFreeLanceService"
         tools:targetApi="31">
         <activity
+            android:name=".RecentAddJobAdapter"
+            android:exported="false" />
+        <activity
             android:name=".RecentAddJob"
             android:exported="false" />
         <activity

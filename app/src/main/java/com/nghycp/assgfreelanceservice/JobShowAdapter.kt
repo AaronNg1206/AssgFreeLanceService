@@ -126,11 +126,13 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
                     //add to array list
                     jobArrayList.add(model!!)
                 }
+
+                //Log.v("ID", jobArrayList.get(0).id)
                 for (i in jobArrayList.indices) {
-                    Toast.makeText(context, jobArrayList.get(i).State, Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(context, (jobArrayList.get(i).id).toString(), Toast.LENGTH_SHORT).show()
                     if (jobArrayList.get(i).id == idOnClick) {
-                        Log.v("id4", jobArrayList.get(i).id)
-                        Log.v("id5", idOnClick)
+                        //Log.v("id4", jobArrayList.get(i).id)
+                        //Log.v("id5", idOnClick)
                         Toast.makeText(
                             context,
                             "This Job already taken, Pls choose another",
@@ -139,8 +141,8 @@ class JobShowAdapter: RecyclerView.Adapter<JobShowAdapter.HolderJob>{
                         noRepeat = false
                         break
                     } else if (jobArrayList.get(i).id != idOnClick) {
-                        Log.v("id3", jobArrayList.get(i).id)
-                        Log.v("id2", idOnClick)
+                        //Log.v("id3", jobArrayList.get(i).id)
+                        //Log.v("id2", idOnClick)
                         validateList.add(jobArrayList.get(i))
 
                     }
