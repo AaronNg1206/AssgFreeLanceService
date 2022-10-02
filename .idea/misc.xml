@@ -44,13 +44,14 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_display_first.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_edit_user_profile.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_forget_password.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_added.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_applied.xml" value="0.2569444444444444" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_apply_layout.xml" value="0.5132530120481927" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_show.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_job_show_layout.xml" value="0.264" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_recent_add_job.xml" value="0.536" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_recent_add_job.xml" value="0.5181907571288102" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_recycler_view_home_page.xml" value="0.2564102564102564" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_register.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/activity_user_home_page.xml" value="0.536" />
@@ -59,6 +60,7 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/fragment_first.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/fragment_second.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/job_detail_layout.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/recent_add_layout.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/row_job.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/layout/row_jobs.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/AssgFreeLanceService/app/src/main/res/menu/admin_menu.xml" value="0.27447916666666666" />

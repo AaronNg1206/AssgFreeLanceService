@@ -135,11 +135,10 @@ class UserHomePage : AppCompatActivity() {
                 startActivity(Intent( this,JobApplied::class.java))
             }
             R.id.RecentAddJob -> {
-                val firebaseUser  = firebaseAuth.currentUser?.uid
+              val firebaseUser  = firebaseAuth.currentUser?.uid
 
-                var intent = Intent(this,RecentAddJob::class.java).also {
-                    it.putExtra("uid", firebaseUser)
-                }
+                var intent = Intent( this,JobAdded::class.java)
+                    .also {it.putExtra("uid", firebaseUser)}
                 startActivity(intent)
 
             }
@@ -162,6 +161,7 @@ class UserHomePage : AppCompatActivity() {
                     //add to array list
                     jobArrayList.add(model!!)
                 }
+                //Log.v("MainActivity",jobArrayList.toString())
                 //set adapter
                 jobShowAdapter = JobShowAdapter(this@UserHomePage, jobArrayList)
                 //set adapter to recycle view
