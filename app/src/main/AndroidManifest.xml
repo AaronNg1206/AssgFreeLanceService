@@ -14,11 +14,11 @@
         android:theme="@style/Theme.AssgFreeLanceService"
         tools:targetApi="31">
         <activity
-            android:name=".RecentAddJobAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".RecentAddJob"
-            android:exported="false" />
+            android:name=".JobAdded"
+            android:exported="false"
+            android:label="@string/title_activity_job_added"
+            android:theme="@style/Theme.AssgFreeLanceService.NoActionBar" />
+
         <activity
             android:name=".JobApplied"
             android:exported="false"
@@ -30,11 +30,11 @@
         <activity
             android:name=".AdminShow"
             android:exported="false" />
-        <activity
+       <!-- <activity
             android:name=".JobShowLayoutActivity"
             android:exported="false"
             android:label="@string/title_activity_job_show_layout"
-            android:theme="@style/Theme.AssgFreeLanceService.NoActionBar" />
+            android:theme="@style/Theme.AssgFreeLanceService.NoActionBar" />-->
         <activity
             android:name=".JobShowActivity"
             android:exported="false" />
